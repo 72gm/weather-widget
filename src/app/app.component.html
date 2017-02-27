@@ -1,0 +1,22 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded box-shadow-bigblur">
+  <button class="navbar-toggler navbar-toggler-right menu-button-mobile" type="button" data-toggle="collapse" 
+  data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+  (click)="isCollapsed = !isCollapsed">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand"routerLink="/home">
+      <img src="/assets/images/Status-weather-clear-icon.png" width="60" height="60" class="d-inline-block align-top navbar-brand-img" alt="">
+  </a>
+  <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
+    <ul class="navbar-nav" (click)="isCollapsed = !isCollapsed">
+      <li class="nav-item">
+        <a class="nav-link pull-right" routerLink="/home" routerLinkActive="active" >Home</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link pull-right" routerLink="/about" routerLinkActive="active">About</a>
+      </li>      
+    </ul>     
+  </div>
+</nav> 
+ 
+<router-outlet></router-outlet>

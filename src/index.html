@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>5 Day Weather</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://npmcdn.com/ngx-charts/release/ngx-charts.css" />
+  
+<script async src="../assets/scripts/bowser.min.js" ></script>
+
+<!--<script async src="../assets/scripts/es6-shim.min.js" ></script>-->
+<!--<script async src="../assets/scripts/core.min.js" ></script>-->
+<script async src="../assets/scripts/shim.min.js" ></script>
+<script async src="../assets/scripts/index.js"></script> <!--classlist-polyfill-->
+<!--<script async src="../assets/scripts/classlist.js" ></script>-->
+<script async src="../assets/scripts/array-includes.js" ></script>
+<script async src="../assets/scripts/typedarray.js" ></script>
+<script async src="../assets/scripts/web-animations.min.js" ></script>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2189896335357540",
+    enable_page_level_ads: true
+  });
+  
+</script>
+</head>
+<body>
+  <app-root>
+    <div class="spinner-display home-spinner">
+      <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
+      <span>Please wait while the app loads </span>
+    </div>
+  </app-root>
+</body>
+<script>
+var warning = "You are using a browser that may not be supported by this website. Some or all of this site may not work properly. Please upgrade your browser if you can!";
+
+    if(bowser.chrome != undefined){
+      if(bowser.version < 30){
+      alert(warning);
+      }
+    }
+    
+    if(bowser.msedge != undefined){
+      if(bowser.version < 14){
+      alert(warning);
+      }
+    }
+
+    if(bowser.msie != undefined){
+      if(bowser.version < 10){
+         alert(warning);
+      }
+    }
+    
+</script>
+</html>

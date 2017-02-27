@@ -1,0 +1,41 @@
+<div class="container-fluid container-margin home-container" [@transition]='state'>
+
+  <p *ngIf="thereHasBeenAnError">
+    <ngb-alert [dismissible]="true" *ngIf="!alertClosed" (close)="alertClosed = true">
+      <strong>Warning!</strong> There has been an error contacting the data API.
+    </ngb-alert>
+  </p>
+
+    <div *ngIf="!myData" class="spinner-display">
+      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+      <span>Loading weather data....  </span>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="page-header-box">
+          <h4 class="page-header-box-title" *ngIf="myData">
+            Weather in {{myData.location.name}}, {{myData.location.country}} for the next 5 days</h4>
+        </div>
+      </div>
+     </div>
+
+      <div class="row" *ngIf="myData?.days">
+        <div class="col-12 col-sm-4 col-lg-3 col-xl-2" *ngFor="let day of myData.days; let i = index">
+          <div class="card">
+            <div class="card-header" > 
+             <p> {{day.dayList[i].dt_txt | date:'MMM d'}} </p>
+             <p> High: {{day.dayTemp | kelvinconvert}}°</p>
+             <p> {{day.dayDesc}}</p>
+            </div>
+            <div class="card-block weather-block">
+                <ul>
+                  <li *ngFor="let daylistitem of day.dayList">
+                      {{ daylistitem.dt_txt | date:'shortTime'}} : {{daylistitem.main.temp | kelvinconvert}}°
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </div>
