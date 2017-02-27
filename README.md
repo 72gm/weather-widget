@@ -6,15 +6,18 @@ This weather widget is built in Angular 2 and Bootstrap 4.
 A demo is available at http://weather-widget.azurewebsites.net/ 
 
 Local installation
-(1) Create a project folder and open it up in your IDE. Install Angular CLI via NPM if not already installed
+
+(1) Open it up in your IDE. Install Angular CLI via NPM
 
     npm install -g @angular/cli
+    ng new PROJECT_NAME
+    cd PROJECT_NAME
     
- (2) Copy the weather-widget package.json file into the one created by Angular CLI. This will add required dependencies
+ (2) Copy the weather-widget package.json file above into the one created by Angular CLI. This will add required dependencies
+  
+ (4) Delete the src folder created by the ng new command. Download and copy weather-widget src folder above to replace this.
  
  (3) Run npm install
- 
- (4) Copy weather-widget src folder to the root of your new project
  
  (5) Run ng serve to run the app locally on http://localhost:4200/ 
  
@@ -23,5 +26,6 @@ Local installation
  (7) Run ng test to run any tests
  
  NOTES:
- 
+ Angular CLI doesn't let me create an overall npm package, hence the numerous steps!
+ I am new to github/opens ource as I come from a TFS/closed source background
  
