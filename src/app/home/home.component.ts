@@ -9,7 +9,7 @@ import { Weather5DayService } from '../shared/services/weather-5day.service';
 import { IWeatherData } from '../shared/interfaces/weather-data';
 import { IMyWeather } from '../shared/interfaces/my-weather';
 import { IDayItem } from '../shared/interfaces/day-item';
-import { IDayOther } from '../shared/interfaces/day-other';
+import { IList } from '../shared/interfaces/list';
 import { IDayList } from '../shared/interfaces/day-list';
 
 @Component({
