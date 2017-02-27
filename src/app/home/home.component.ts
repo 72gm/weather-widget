@@ -43,38 +43,45 @@ export class HomeComponent implements OnInit {
   }
 
   convertData(data: IWeatherData) {
-    // get min and max dates
-    this.myData = {location: data.city,
+    
+    this.myData = {
+      location: data.city,
       days: []
     }
+    // get the first date and use as baseline
     let minDateItem = data.list.reduce(function (a, b) { return a.dt < b.dt ? a : b; });
     let day1Date = new Date(minDateItem.dt_txt);
-    let day1 = data.list.filter(function (a) { return day1Date.getDate() === new Date(a.dt_txt).getDate(); });   
-    day1Date.setDate(day1Date.getDate() + 1);
-    console.log(day1);
-    let day2 = data.list.filter(function (a) { return day1Date.getDate() === new Date(a.dt_txt).getDate(); });
-    day1Date.setDate(day1Date.getDate() + 1);
-    console.log(day1Date);
-    let day3 = data.list.filter(function (a) { return day1Date.getDate() === new Date(a.dt_txt).getDate(); });
-    day1Date.setDate(day1Date.getDate() + 1);
-    console.log(day1Date);
-    let day4 = data.list.filter(function (a) { return day1Date.getDate() === new Date(a.dt_txt).getDate(); });
-    day1Date.setDate(day1Date.getDate() + 1);
-    console.log(day1Date);
-    let day5 = data.list.filter(function (a) { return day1Date.getDate() === new Date(a.dt_txt).getDate(); });
+    let day1List = data.list.filter(function (a) { return day1Date.getDate() === new Date(a.dt_txt).getDate(); });
     
-    this.myData.days.push({dayList: day1, dayDesc: day1[0].weather[0].main, 
-          dayTemp: day1.reduce(function (a, b) { return a.main.temp > b.main.temp ? a : b; }).main.temp,dayTime: day1[0].dt_txt});
-    this.myData.days.push({dayList: day2, dayDesc: day2[0].weather[0].main, 
-      dayTemp: day2.reduce(function (a, b) { return a.main.temp > b.main.temp ? a : b; }).main.temp,dayTime: day2[0].dt_txt});
-    this.myData.days.push({dayList: day3, dayDesc: day3[0].weather[0].main, 
-      dayTemp: day3.reduce(function (a, b) { return a.main.temp > b.main.temp ? a : b; }).main.temp,dayTime: day3[0].dt_txt});
-    this.myData.days.push({dayList: day4, dayDesc: day4[0].weather[0].main, 
-      dayTemp: day4.reduce(function (a, b) { return a.main.temp > b.main.temp ? a : b; }).main.temp, dayTime: day4[0].dt_txt});
-    this.myData.days.push({dayList: day5, dayDesc: day5[0].weather[0].main, 
-      dayTemp: day5.reduce(function (a, b) { return a.main.temp > b.main.temp ? a : b; }).main.temp, dayTime: day5[0].dt_txt});
-    console.log('mydata');
-    console.log(this.myData);
+    day1Date.setDate(day1Date.getDate() + 1);
+    let day2List = data.list.filter(function (a) { return day1Date.getDate() === new Date(a.dt_txt).getDate(); });
+    
+    day1Date.setDate(day1Date.getDate() + 1);
+    let day3List = data.list.filter(function (a) { return day1Date.getDate() === new Date(a.dt_txt).getDate(); });
+    
+    day1Date.setDate(day1Date.getDate() + 1);
+    let day4List = data.list.filter(function (a) { return day1Date.getDate() === new Date(a.dt_txt).getDate(); });
+    
+    day1Date.setDate(day1Date.getDate() + 1);
+    let day5List = data.list.filter(function (a) { return day1Date.getDate() === new Date(a.dt_txt).getDate(); });
 
+    // create my data object that has a collection for each day
+     this.myData.days.push(this.createMyData(day1List));
+    this.myData.days.push(this.createMyData(day2List));
+    this.myData.days.push(this.createMyData(day3List));
+    this.myData.days.push(this.createMyData(day4List));
+    this.myData.days.push(this.createMyData(day5List));
+  }
+
+  createMyData(day: IList[]){
+    console.log(day);
+    let dayList =  {
+      dayList: day, 
+      dayDesc: day[0].weather[0].main.toString(), 
+      dayTemp: day.reduce(function (a, b) { return a.main.temp > b.main.temp ? a : b; }).main.temp, 
+      dayTime: day[0].dt_txt
+     }
+
+      return dayList;
   }
 }
