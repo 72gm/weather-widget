@@ -39,12 +39,18 @@ Local installation
  
  Improvements:
  Create a new api that reformats the data received from the open weather api ( a 5 day weather forecast that doesn't a collection of days!?)
+ 
  Data structures needed more thought
+ 
  Better error logging e.g. to an error logging service
+ 
  In a larger app I wouldn't have one app module - i'd probably have modules for services, classes, interfaces, source etc and importthese into the main app module
+ 
  Didn't have time to improve my LESS - add a variables file etc
+ 
  Haven't quite got my head around Ang2 testing as it is quite different from Ang 1. I need to create a mock service and a lot more component and UI tests
- UI improvements - typeahead dropdown to select location, some images, some animation to drill down into day detail, i'd probably have 
+ 
+ UI improvements - typeahead dropdown to select location, some images, some animation to drill down into day detail, i'd probably have a line or bar chart for the spread of daily temps
  
  
  
