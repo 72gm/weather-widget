@@ -14,6 +14,8 @@ Local installation
     cd PROJECT_NAME
     
  (2) Copy the weather-widget package.json file above into the one created by Angular CLI. This will add required dependencies
+ 
+ (2) Copy the weather-widget angular-cli.json file above into the one created by Angular CLI.
   
  (4) Delete the src folder created by the ng new command. Download and copy weather-widget src folder above to replace this.
  
