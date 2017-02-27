@@ -10,7 +10,7 @@ Local installation
 (1) Open it up in your IDE. Install Angular CLI via NPM
 
     npm install -g @angular/cli
-    ng new PROJECT_NAME
+    ng new PROJECT_NAME (This can take a few mins)
     cd PROJECT_NAME
     
  (2) Copy the weather-widget package.json file above into the one created by Angular CLI. This will add required dependencies
